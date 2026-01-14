@@ -1,0 +1,246 @@
+/* --- CSS Variables for Colors --- */
+:root {
+    --primary-color: #00df9a;
+    /* Vibrant Green Accent */
+    --dark-bg: #121212;
+    /* Deep Black background */
+    --secondary-bg: #1e1e1e;
+    /* Slightly lighter gray for sections */
+    --text-light: #ffffff;
+    --text-gray: #bbbbbb;
+}
+
+/* --- General Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* Makes clicking links scroll smoothly */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Reusable Utility Classes */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-dark {
+    background-color: var(--secondary-bg);
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    /* Subtle lift effect on hover */
+    background-color: #00c085;
+}
+
+/* --- Navbar --- */
+.navbar {
+    padding: 1.5rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+/* --- Hero Section --- */
+.hero {
+    padding: 50px 0 100px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    /* Takes up 50% space */
+}
+
+.hero-text h2 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    color: var(--text-gray);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    max-width: 500px;
+}
+
+.hero-image {
+    flex: 1;
+    /* Takes up the other 50% space */
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 223, 154, 0.2);
+    /* Glowing shadow effect */
+}
+
+/* --- Features Section (Columns) --- */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+}
+
+/* CSS Grid creates the 3 columns automatically */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.feature-card {
+    background-color: var(--dark-bg);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    transition: border-color 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--primary-color);
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* --- Contact / Newsletter --- */
+.contact-container {
+    text-align: center;
+}
+
+.contact-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-container p {
+    color: var(--text-gray);
+    margin-bottom: 30px;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 5px;
+    border: 2px solid #333;
+    background-color: var(--secondary-bg);
+    color: var(--text-light);
+    outline: none;
+}
+
+.newsletter-form input:focus {
+    border-color: var(--primary-color);
+}
+
+#form-feedback {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--secondary-bg);
+    padding: 30px 0;
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Design (Mobile) --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* Hiding navbar links on small screens for simplicity */
+    }
+
+    .hero-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        /* Stack image below text on mobile */
+        text-align: center;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+}
